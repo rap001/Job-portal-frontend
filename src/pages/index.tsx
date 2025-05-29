@@ -11,7 +11,7 @@ import { Job } from "../components/JobList";
 
 const GLOBAL_MIN_SALARY = 0;
 const GLOBAL_MAX_SALARY = 100;
-const backendUrl: string = process.env.BACK_END_URL ?? "localhost";
+const backendUrl: string = process.env.BACK_END_URL??'job-portal-backend-production-20b7.up.railway.app';
 
 export default function App() {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -70,7 +70,7 @@ export default function App() {
       if (filterValues.selectedSalaryRange[0] > GLOBAL_MIN_SALARY) queryParams.append('minSalary', String(filterValues.selectedSalaryRange[0]));
       if (filterValues.selectedSalaryRange[1] < GLOBAL_MAX_SALARY) queryParams.append('maxSalary', String(filterValues.selectedSalaryRange[1]));
 
-      const url = `http://${backendUrl}:3000/jobs?${queryParams.toString()}`;
+      const url = `http://${backendUrl}/jobs?${queryParams.toString()}`;
       console.log('Fetching from URL:', url); // For debugging
 
       const response = await fetch(url);
@@ -104,7 +104,7 @@ export default function App() {
   // **MODIFY handleCreateJob TO CALL BACKEND'S POST ENDPOINT**
   const handleCreateJob = async (data: JobFormData) => {
     try {
-      const response = await fetch(`http://${backendUrl}:3000/jobs`, {
+      const response = await fetch(`http://${backendUrl}/jobs`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
