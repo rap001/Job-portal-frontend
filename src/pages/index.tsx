@@ -8,7 +8,6 @@ import { useForm } from "react-hook-form";
 import { IconBriefcase, IconMapPin, IconSearch } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import { Job } from "../components/JobList";
-import { env } from "process";
 
 const GLOBAL_MIN_SALARY = 0;
 const GLOBAL_MAX_SALARY = 100;
