@@ -11,7 +11,7 @@ import { Job } from "../components/JobList";
 
 const GLOBAL_MIN_SALARY = 0;
 const GLOBAL_MAX_SALARY = 100;
-const backendUrl: string = process.env.BACK_END_URL??'job-portal-backend-production-20b7.up.railway.app';
+const backendUrl: string = process.env.BACK_END_URL??'job-portal-backend-3prp.onrender.com';
 console.log('Backend URL:', backendUrl); // Log the backend URL for debugging
 export default function App() {
   const [jobs, setJobs] = useState<Job[]>([]);
